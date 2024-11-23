@@ -1,0 +1,45 @@
+ class MainMenu:
+    def __init__(self, root):
+        self.root = root
+
+        # Create the main menu frame
+        self.main_menu_frame = tk.Frame(self.root)
+        self.main_menu_frame.pack()
+
+        # Create the title label
+        self.title_label = tk.Label(self.main_menu_frame, text="Flappy Bird", font=("Arial", 48))
+        self.title_label.pack()
+
+        # Create the buttons
+        self.play_button = tk.Button(self.main_menu_frame, text="Play", command=self.play_game)
+        self.play_button.pack()
+
+        self.leaderboard_button = tk.Button(self.main_menu_frame, text="Leaderboard", command=self.show_leaderboard)
+        self.leaderboard_button.pack()
+
+        self.shop_button = tk.Button(self.main_menu_frame, text="Shop", command=self.open_shop)
+        self.shop_button.pack()
+
+    def play_game(self):
+        # Start the game
+        game = Game()
+        game.run()  # Start the main game loop
+
+    def show_leaderboard(self):
+        # Show the leaderboard
+        pass
+
+    def open_shop(self):
+        # Open the shop
+        pass
+
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    root.title("Flappy Bird")
+    root.geometry("600x400")
+
+    menu = MainMenu(root)
+
+    root.mainloop()
+ 
